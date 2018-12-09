@@ -4,40 +4,21 @@ import { Link } from 'react-router-dom';
 
 
 class MakeQuiz extends Component {
-    constructor(props) {
-        super(props);
+  
 
-        this.state = {
-            title: "",
-            numValue: 5,
-        }
-        
-    }
-
-    handleChange = (event) => {
-        this.setState({
-            numValue: event.target.value
-        });
-    }
-
-    handleNameChange = (event) => {
-        this.setState({
-            title: event.target.value
-        })
-    }
 
 
     render() {
         return (
             <div>
 
-                <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Quiz Name</span>
+                <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                    <span className="input-group-text" id="inputGroup-sizing-default">Quiz Name</span>
                 </div>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
-                value={this.state.name}
-                onChange={this.handleNameChange}
+                <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+                value={this.props.title}
+                onChange={this.props.handleNameChange}
                 ></input>
                 </div>
 
@@ -48,16 +29,16 @@ class MakeQuiz extends Component {
                         className="form-control-range" 
                         id="formControlRange"
                         min="2" max="20" step="1"
-                        value={this.state.numValue}
-                        onChange={this.handleChange}
+                        value={this.props.numValue}
+                        onChange={this.props.handleValChange}
                         ></input>
                     </div>
                 </form>
 
-                <div>{this.state.numValue}</div>
+                <div>{this.props.numValue}</div>
 
                 <Link to="/questions" >
-                    <button type="button" class="btn btn-info">Continue</button>
+                    <button type="button" className="btn btn-info">Continue</button>
                 </Link>
 
             </div>

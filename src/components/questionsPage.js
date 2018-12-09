@@ -14,7 +14,8 @@ class QuestionsPage extends Component {
     render() {
         return (
             <div>
-                The quiz name is: 
+                <h1>The quiz name is: {this.props.title}</h1>
+                <h2>There are {this.props.numValue} Questions </h2>
                 
             </div>
         )

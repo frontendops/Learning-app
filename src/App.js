@@ -7,8 +7,27 @@ import MakeQuiz from './components/makeQuiz';
 import QuestionsPage from './components/questionsPage';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
 
+    this.state = {
+        title: "",
+        numValue: 5,
+    }
+    
+}
   
+handleValChange = (event) => {
+  this.setState({
+      numValue: event.target.value
+  });
+}
+
+handleNameChange = (event) => {
+  this.setState({
+      title: event.target.value
+  })
+}
 
   render() {
     return (
@@ -17,11 +36,19 @@ class App extends Component {
           <Home />
         )} />
 
-        <Route path="/create" component={MakeQuiz} />
+        <Route path="/create" render={() => (
+          <MakeQuiz 
+          title={this.state.title}
+          numValue={this.state.numValue}
+          handleNameChange={this.handleNameChange}
+          handleValChange={this.handleValChange}
+          />
+        )} />
 
        <Route path="/questions" render={() => (
           <QuestionsPage 
-          
+          title={this.state.title}
+          numValue={this.state.numValue}
           />
         )} />
 
