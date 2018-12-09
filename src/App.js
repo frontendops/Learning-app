@@ -4,8 +4,12 @@ import { Route } from 'react-router-dom';
 
 import Home from './components/home';
 import MakeQuiz from './components/makeQuiz';
+import QuestionsPage from './components/questionsPage';
 
 class App extends Component {
+
+  
+
   render() {
     return (
       <div>
@@ -14,6 +18,13 @@ class App extends Component {
         )} />
 
         <Route path="/create" component={MakeQuiz} />
+
+       <Route path="/questions" render={() => (
+          <QuestionsPage 
+          
+          />
+        )} />
+
 
       </div>
     );

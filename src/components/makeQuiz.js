@@ -1,11 +1,14 @@
 import React, {Component}  from 'react';
+import { Link } from 'react-router-dom';
+
+
 
 class MakeQuiz extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            name: "",
+            title: "",
             numValue: 5,
         }
         
@@ -17,21 +20,30 @@ class MakeQuiz extends Component {
         });
     }
 
+    handleNameChange = (event) => {
+        this.setState({
+            title: event.target.value
+        })
+    }
+
 
     render() {
         return (
             <div>
 
-                <div className="input-group">
-                    <div className="input-group-prepend">
-                        <span className="input-group-text">Quiz Name</span>
-                    </div>
-                    <textarea className="form-control" aria-label="With textarea"></textarea>
+                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Quiz Name</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+                value={this.state.name}
+                onChange={this.handleNameChange}
+                ></input>
                 </div>
 
                 <form>
                     <div className="form-group">
-                        <label htmlFor="formControlRange">Number of questions</label>
+                        <label htmlFor="formControlRange">Number of questions (Slide to select)</label>
                         <input type="range" 
                         className="form-control-range" 
                         id="formControlRange"
@@ -44,7 +56,9 @@ class MakeQuiz extends Component {
 
                 <div>{this.state.numValue}</div>
 
-                <button type="button" class="btn btn-info">Continue</button>
+                <Link to="/questions" >
+                    <button type="button" class="btn btn-info">Continue</button>
+                </Link>
 
             </div>
         )
