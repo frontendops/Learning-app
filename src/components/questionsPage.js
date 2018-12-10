@@ -1,12 +1,13 @@
 import React, {Component}  from 'react';
 import QuestionForm from './questionForm.js';
+import '../App.css'
 
 class QuestionsPage extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            
+            query: ""
         }
         
     }
@@ -17,7 +18,9 @@ class QuestionsPage extends Component {
         let forms = [];
 
         for (let i = 0; i < this.props.numValue; i++) {
-            forms.push(<div id={i} className="form"> <QuestionForm /> </div>);
+            forms.push(<div id={i} className="form"> <QuestionForm 
+            title={this.props.title}
+            /> </div>);
         }
 
         return (
