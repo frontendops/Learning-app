@@ -7,11 +7,16 @@ class QuestionsPage extends Component {
         super(props);
 
         this.state = {
-            query: ""
+            option: '',
+            questionsObj: [{option: ''}],
+
         }
         
     }
 
+    handleInput = (e) => {
+        this.setState({ option: e.target.value})
+    }
 
 
     render() {
@@ -20,6 +25,8 @@ class QuestionsPage extends Component {
         for (let i = 0; i < this.props.numValue; i++) {
             forms.push(<div id={i} className="form"> <QuestionForm 
             title={this.props.title}
+            option={this.state.option}
+            handleInput={this.handleInput}
             /> </div>);
         }
 
