@@ -23,6 +23,19 @@ class QuestionForm extends Component {
           this.setState({ questionsObj: newOption });
         }
 
+    handleAddOption = () => {
+        this.setState({ questionsObj: this.state.questionsObj
+            .concat([{option: ''}])
+    })
+    }
+
+    handleDeleteOption = (id) => () => {
+        this.setState({ questionsObj: this.state.questionsObj
+            .filter((s, qid) => id !== qid)
+        })
+    }
+
+
 
     render() {
      
@@ -39,11 +52,14 @@ class QuestionForm extends Component {
                 {this.state.questionsObj.map((question, id) => (
                    
                    <div className="options">
-
                    <div className="input-group mb-3">
                    <div className="input-group-append">
-                       <span className="input-group-text" id="inputGroup-sizing-default">x</span>
+                    {/* delete button */}
+                    <button type="button" class="btn btn-danger"
+                    onClick={this.handleDeleteOption(id)}
+                    >Delete</button>
                    </div>
+
                    <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
                    value={question.option}
                    onChange={this.handleQuestionChange(id)}
@@ -54,7 +70,9 @@ class QuestionForm extends Component {
 
                 ))}
 
-                <button type="button" class="btn btn-success">Add Option</button>
+                <button type="button" class="btn btn-success" 
+                onClick={this.handleAddOption}
+                >Add Option</button>
                 
 
             </div>
