@@ -29,6 +29,11 @@ class QuestionsPage extends Component {
                 <h2>There are {this.props.numValue} Questions </h2>
 
                {forms}
+
+                <br />
+                <br />
+
+               <button type="button" class="btn btn-primary">Next</button>
                 
             </div>
         )

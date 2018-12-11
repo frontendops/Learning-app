@@ -35,6 +35,7 @@ class QuestionForm extends Component {
                 <MultipeChoice />
                 <MultipeChoice />
 
+                <button type="button" class="btn btn-success">Add Option</button>
                 
 
             </div>
