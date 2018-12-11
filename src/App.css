@@ -3,3 +3,10 @@
 * form styles
 */
 
+.form {
+    height: 33vh;
+}
+
+.question {
+    padding-bottom: 15px;
+}
