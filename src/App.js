@@ -14,8 +14,15 @@ class App extends Component {
     this.state = {
         title: "",
         numValue: 2,
+        questions: ['hello', 'there'],
     }
     
+}
+
+handleInput = (identifier, text) => {
+  const questions = [...this.state.questions];
+  questions[identifier] = text;
+  this.setState({ questions })
 }
   
 handleValChange = (event) => {
@@ -50,6 +57,8 @@ handleNameChange = (event) => {
           <QuestionsPage 
           title={this.state.title}
           numValue={this.state.numValue}
+          questions={this.state.questions}
+          handleInput={this.handleInput}
           />
         )} />
 

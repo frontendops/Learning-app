@@ -7,15 +7,9 @@ class QuestionsPage extends Component {
         super(props);
 
         this.state = {
-            option: '',
-            questionsObj: [{option: ''}],
-
+        
         }
         
-    }
-
-    handleInput = (e) => {
-        this.setState({ option: e.target.value})
     }
 
 
@@ -31,13 +25,24 @@ class QuestionsPage extends Component {
                 <h1>The quiz name is: {this.props.title}</h1>
                 <h2>There are {this.props.numValue} Questions </h2>
 
-               {forms.map((form) => (
-                   <div className="form">
+               {this.props.questions.map((question, id) => (
+                   <div className="form"
+                   key={id}
+                   >
+
+                       <div className="input-group question">
+                <input type="text" className="form-control" aria-label="Text input with dropdown button" placeholder="What is your Question?"
+                value={question}
+               onChange={(e) => this.props.handleInput(id, e.target.value)}
+                ></input>
+                </div>
+
                    <QuestionForm 
                    
                    title={this.props.title}
                    option={this.state.option}
-                   handleInput={this.handleInput}
+                   handleInput={this.props.handleInput}
+                   questions={this.props.questions}
                    />
                    </div>
                )

@@ -49,17 +49,11 @@ class QuestionForm extends Component {
         return (
             <div>
                 
-                {this.state.questions.map( (question, id) => (
                 
-                <div className="input-group question">
-                <input type="text" className="form-control" aria-label="Text input with dropdown button" placeholder="What is your Question?"
-                value={question}
-                onChange={(e) => this.handleInput(e.target.value, id)}
-                ></input>
-                </div>
                 
-        ))
-                }
+             
+                
+        
 
                 {this.state.answersObj.map((question, id) => (
                    
