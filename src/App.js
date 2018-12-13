@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 import Home from './components/home';
 import MakeQuiz from './components/makeQuiz';
 import QuestionsPage from './components/questionsPage';
+import DisplayTest from './components/displayTest';
 
 
 class App extends Component {
@@ -59,6 +60,12 @@ handleNameChange = (event) => {
           numValue={this.state.numValue}
           questions={this.state.questions}
           handleInput={this.handleInput}
+          />
+        )} />
+
+         <Route path="/test" render={() => (
+          <DisplayTest 
+          questions={this.state.questions}
           />
         )} />
 

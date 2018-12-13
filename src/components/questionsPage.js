@@ -1,5 +1,6 @@
 import React, {Component}  from 'react';
 import QuestionForm from './questionForm.js';
+import { Link } from 'react-router-dom';
 import '../App.css'
 
 class QuestionsPage extends Component {
@@ -51,7 +52,9 @@ class QuestionsPage extends Component {
                 <br />
                 <br />
 
-               <button type="button" class="btn btn-primary">Next</button>
+                <Link to="/test" >
+                <button type="button" class="btn btn-primary">Take Quiz</button>
+                </Link>
                 
             </div>
         )
