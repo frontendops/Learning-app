@@ -7,30 +7,37 @@ class QuestionForm extends Component {
 
         this.state = {
             isOpen: false,
-            questionsObj: [{option: ''}],
+            answersObj: [{option: ''}],
+            questions: [' '],
         }
         
     }
 
 
+    handleInput = (text, identifier) => {
+        const questions = [...this.state.questions];
+        questions[identifier] = text;
+        this.setState({ questions })
+    }
+
 
     handleQuestionChange = (id) => (e) => {
-        const newOption = this.state.questionsObj.map((question, idx) => {
+        const newOption = this.state.answersObj.map((question, idx) => {
             if (id !== idx) return question;
             return { ...question, option: e.target.value };
           });
       
-          this.setState({ questionsObj: newOption });
+          this.setState({ answersObj: newOption });
         }
 
     handleAddOption = () => {
-        this.setState({ questionsObj: this.state.questionsObj
+        this.setState({ answersObj: this.state.answersObj
             .concat([{option: ''}])
     })
     }
 
     handleDeleteOption = (id) => () => {
-        this.setState({ questionsObj: this.state.questionsObj
+        this.setState({ answersObj: this.state.answersObj
             .filter((s, qid) => id !== qid)
         })
     }
@@ -42,14 +49,19 @@ class QuestionForm extends Component {
         return (
             <div>
                 
+                {this.state.questions.map( (question, id) => (
+                
                 <div className="input-group question">
                 <input type="text" className="form-control" aria-label="Text input with dropdown button" placeholder="What is your Question?"
-                value={this.props.option}
-                onChange={this.props.handleInput}
+                value={question}
+                onChange={(e) => this.handleInput(e.target.value, id)}
                 ></input>
                 </div>
+                
+        ))
+                }
 
-                {this.state.questionsObj.map((question, id) => (
+                {this.state.answersObj.map((question, id) => (
                    
                    <div className="options">
                    <div className="input-group mb-3">
@@ -73,6 +85,12 @@ class QuestionForm extends Component {
                 <button type="button" class="btn btn-success" 
                 onClick={this.handleAddOption}
                 >Add Option</button>
+
+                <div>
+                    {this.state.answersObj.map( answer => (
+                        <h1>{answer.option}</h1>
+                    ))}
+                </div>
                 
 
             </div>

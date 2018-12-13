@@ -13,7 +13,7 @@ class App extends Component {
 
     this.state = {
         title: "",
-        numValue: 5,
+        numValue: 2,
     }
     
 }
