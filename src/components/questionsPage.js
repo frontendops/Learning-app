@@ -15,46 +15,49 @@ class QuestionsPage extends Component {
 
 
     render() {
-        let forms = [];
-
-        for (let i = 0; i < this.props.numValue; i++) {
-            forms.push(i);
-        }
+      
+        let {questions} = this.props
 
         return (
             <div>
                 <h1>The quiz name is: {this.props.title}</h1>
                 <h2>There are {this.props.numValue} Questions </h2>
 
-               {this.props.questions.map((question, id) => (
-                   <div className="form"
-                   key={id}
-                   >
+            <form onSubmit={this.props.handleSubmit}>
+                <button onClick={this.props.addQuestion}>Add new question</button>
+                
 
-                       <div className="input-group question">
-                <input type="text" className="form-control" aria-label="Text input with dropdown button" placeholder="What is your Question?"
-                value={question}
-               onChange={(e) => this.props.handleInput(id, e.target.value)}
-                ></input>
-                </div>
+                {
+                    questions.map( (val, id ) => {
+                        let questionId = `Question-${id}`;
+                        let ans1 = `ans1 for question ${id}`;
+                        return (
+                            <div key={id}>
+                                <label htmlFor={questionId}>{`question # ${id + 1}`}</label>
+                                <input
+                                type="text"
+                                name={questionId}
+                                data-id={id}
+                                id={questionId}
+                                className="name"
+                                />
+                                <label htmlFor={ans1}>answer 1</label>
+                                <input
+                                type="text"
+                                name={ans1}
+                                data-id={id}
+                                id={ans1}
+                                className="age"
+                                />
+                            </div>
+                        )
 
-                   <QuestionForm 
-                   
-                   title={this.props.title}
-                   option={this.state.option}
-                   handleInput={this.props.handleInput}
-                   questions={this.props.questions}
-                   />
-                   </div>
-               )
-               )}
+                    })
+                }
 
-                <br />
-                <br />
+                    <input type="submit" value="Submit" /> 
 
-                <Link to="/test" >
-                <button type="button" class="btn btn-primary">Take Quiz</button>
-                </Link>
+            </form>
                 
             </div>
         )

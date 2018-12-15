@@ -15,7 +15,13 @@ class App extends Component {
     this.state = {
         title: "",
         numValue: 2,
-        questions: ['hello', 'there'],
+        questions: [{question: "",
+                    ans1: "",
+                    ans2: "",
+                    ans3: "",
+                    ans4: ""
+                  },
+                ]
     }
     
 }
@@ -38,6 +44,21 @@ handleNameChange = (event) => {
   })
 }
 
+addQuestion = () => {
+  this.setState( prevState =>({
+    questions: [...prevState.questions, {question: "",
+    ans1: "",
+    ans2: "",
+    ans3: "",
+    ans4: ""
+  }],
+  }))
+}
+
+handleSubmit = (e) => {
+    e.preventDefault()
+}
+
   render() {
     return (
       <div>
@@ -58,8 +79,10 @@ handleNameChange = (event) => {
           <QuestionsPage 
           title={this.state.title}
           numValue={this.state.numValue}
+
           questions={this.state.questions}
-          handleInput={this.handleInput}
+          addQuestion={this.addQuestion}
+          handleSubmit={this.handleSubmit}
           />
         )} />
 
