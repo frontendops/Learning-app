@@ -22,9 +22,74 @@ class QuestionForm extends Component {
         return (
             <div>
                 
- 
+               { this.props.questions.map( (val, id ) => {
+                        let questionId = `Question-${id}`;
+                        let ans1 = `ans1 for question ${id}`;
+                        let ans2 = `ans2 for question ${id}`;
+                        let ans3 = `ans3 for question ${id}`;
+                        let ans4 = `ans4 for question ${id}`;
+                        return (
+                            <div key={id}
+                            className="form"
+                            >
+                                <label htmlFor={questionId}>{`question # ${id + 1}`}</label>
+                                <input
+                                type="text"
+                                name={questionId}
+                                data-id={id}
+                                id={questionId}
+                                className="question"
+                                />
+                                <br />
+
+                                <label htmlFor={ans1}>answer 1</label>
+                                <input
+                                type="text"
+                                name={ans1}
+                                data-id={id}
+                                id={ans1}
+                                className="ans1"
+                                />
+                                <br />
+
+                                <label htmlFor={ans2}>answer 2</label>
+                                <input
+                                type="text"
+                                name={ans2}
+                                data-id={id}
+                                id={ans2}
+                                className="ans2"
+                                />
+                                <br />
+
+                                <label htmlFor={ans3}>answer 3</label>
+                                <input
+                                type="text"
+                                name={ans3}
+                                data-id={id}
+                                id={ans3}
+                                className="ans3"
+                                />
+                                <br />
+
+                                <label htmlFor={ans4}>answer 4</label>
+                                <input
+                                type="text"
+                                name={ans4}
+                                data-id={id}
+                                id={ans4}
+                                className="ans4"
+                                />
+                                <br />
+
+                                <button type="button"
+                                className="btn btn-danger"
+                                onClick={() => this.props.deleteQuestion(id)}
+                                >Delete</button>
+                            </div>
                
-                
+               );
+               })}
 
             </div>
         )

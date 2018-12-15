@@ -24,7 +24,7 @@ class MakeQuiz extends Component {
 
                 <form>
                     <div className="form-group">
-                        <label htmlFor="formControlRange">Number of questions (Slide to select)</label>
+                        <label htmlFor="formControlRange">Time length of quiz in min (Slide to select)</label>
                         <input type="range" 
                         className="form-control-range" 
                         id="formControlRange"

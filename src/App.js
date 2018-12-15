@@ -70,6 +70,17 @@ handleFormChange = (e) => {
   }
 }
 
+
+deleteQuestion = (id) => {
+  let questions = [...this.state.questions];
+
+  this.setState({ questions: questions.filter( (question, idx)  => {
+      return idx !== id
+  })
+})
+
+}
+
   render() {
     return (
       <div>
@@ -95,6 +106,7 @@ handleFormChange = (e) => {
           addQuestion={this.addQuestion}
           handleSubmit={this.handleSubmit}
           handleFormChange={this.handleFormChange}
+          deleteQuestion={this.deleteQuestion}
           />
         )} />
 

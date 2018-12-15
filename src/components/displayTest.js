@@ -11,7 +11,11 @@ class DisplayTest extends Component {
             <div>
 
                 <li>{question.question}</li>
+
                 <li>{question.ans1}</li>
+                <li>{question.ans2}</li>
+                <li>{question.ans3}</li>
+                <li>{question.ans4}</li>
 
             </div>
             );
