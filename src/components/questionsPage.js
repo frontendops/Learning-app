@@ -23,7 +23,9 @@ class QuestionsPage extends Component {
                 <h1>The quiz name is: {this.props.title}</h1>
                 <h2>There are {this.props.numValue} Questions </h2>
 
-            <form onSubmit={this.props.handleSubmit}>
+            <form onSubmit={this.props.handleSubmit}
+            onChange={this.props.handleFormChange}
+            >
                 <button onClick={this.props.addQuestion}>Add new question</button>
                 
 
@@ -39,7 +41,7 @@ class QuestionsPage extends Component {
                                 name={questionId}
                                 data-id={id}
                                 id={questionId}
-                                className="name"
+                                className="question"
                                 />
                                 <label htmlFor={ans1}>answer 1</label>
                                 <input
@@ -47,7 +49,7 @@ class QuestionsPage extends Component {
                                 name={ans1}
                                 data-id={id}
                                 id={ans1}
-                                className="age"
+                                className="ans1"
                                 />
                             </div>
                         )
@@ -55,7 +57,11 @@ class QuestionsPage extends Component {
                     })
                 }
 
+
+            <Link to="/test" >
                     <input type="submit" value="Submit" /> 
+                    
+                </Link>
 
             </form>
                 

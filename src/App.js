@@ -59,6 +59,17 @@ handleSubmit = (e) => {
     e.preventDefault()
 }
 
+handleFormChange = (e) => {
+  if (["question", "ans1", "ans2", "ans3", "ans4"].includes(e.target.className)) {
+    let questions = [...this.state.questions]
+    questions[e.target.dataset.id][e.target.className] = e.target.value
+    this.setState( {questions}, () => console.log(this.state.questions) )
+
+  } else {
+    this.setState({ [e.target.name] : e.target.value})
+  }
+}
+
   render() {
     return (
       <div>
@@ -83,6 +94,7 @@ handleSubmit = (e) => {
           questions={this.state.questions}
           addQuestion={this.addQuestion}
           handleSubmit={this.handleSubmit}
+          handleFormChange={this.handleFormChange}
           />
         )} />
 

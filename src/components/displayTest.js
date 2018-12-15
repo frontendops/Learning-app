@@ -8,7 +8,12 @@ class DisplayTest extends Component {
 
     render() {
         const allQuestions = this.props.questions.map(question => 
-            <li>{question}</li>
+            <div>
+
+                <li>{question.question}</li>
+                <li>{question.ans1}</li>
+
+            </div>
             );
 
         return(
