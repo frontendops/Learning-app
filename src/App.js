@@ -15,13 +15,17 @@ class App extends Component {
     this.state = {
         title: "",
         numValue: 2,
-        questions: [{question: "",
-                    ans1: "",
-                    ans2: "",
-                    ans3: "",
-                    ans4: ""
-                  },
-                ]
+        questions: [{
+          question: "",
+          ans1: "",
+          ans2: "",
+          ans3: "",
+          ans4: ""
+        },],
+
+        correctAnswers: [{
+          answer: ""
+        },]
     }
     
 }

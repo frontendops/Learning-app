@@ -28,6 +28,9 @@ class QuestionForm extends Component {
                         let ans2 = `ans2 for question ${id}`;
                         let ans3 = `ans3 for question ${id}`;
                         let ans4 = `ans4 for question ${id}`;
+
+                        let correctAnswer = `correct answer for question # ${id +1}`;
+
                         return (
                             <div key={id}
                             className="form"
@@ -42,7 +45,7 @@ class QuestionForm extends Component {
                                 />
                                 <br />
 
-                                <label htmlFor={ans1}>answer 1</label>
+                                <label htmlFor={ans1}>a</label>
                                 <input
                                 type="text"
                                 name={ans1}
@@ -52,7 +55,7 @@ class QuestionForm extends Component {
                                 />
                                 <br />
 
-                                <label htmlFor={ans2}>answer 2</label>
+                                <label htmlFor={ans2}>b</label>
                                 <input
                                 type="text"
                                 name={ans2}
@@ -62,7 +65,7 @@ class QuestionForm extends Component {
                                 />
                                 <br />
 
-                                <label htmlFor={ans3}>answer 3</label>
+                                <label htmlFor={ans3}>c</label>
                                 <input
                                 type="text"
                                 name={ans3}
@@ -72,7 +75,8 @@ class QuestionForm extends Component {
                                 />
                                 <br />
 
-                                <label htmlFor={ans4}>answer 4</label>
+                              
+                                <label htmlFor={ans4}>d</label>
                                 <input
                                 type="text"
                                 name={ans4}
