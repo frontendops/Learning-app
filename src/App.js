@@ -30,6 +30,7 @@ class App extends Component {
     
 }
 
+//inputs for main quiz questions
 handleInput = (identifier, text) => {
   const questions = [...this.state.questions];
   questions[identifier] = text;
@@ -48,6 +49,8 @@ handleNameChange = (event) => {
   })
 }
 
+
+//functions for form inputs 
 addQuestion = () => {
   this.setState( prevState =>({
     questions: [...prevState.questions, {question: "",
@@ -82,6 +85,12 @@ deleteQuestion = (id) => {
       return idx !== id
   })
 })
+
+}
+
+//function for selecting and displaying correct answers
+
+saveAnswer = (id, e) => {
 
 }
 
