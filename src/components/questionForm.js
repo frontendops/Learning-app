@@ -13,7 +13,6 @@ class QuestionForm extends Component {
     }
 
 
-  
 
 
 
@@ -45,38 +44,70 @@ class QuestionForm extends Component {
                                 />
                                 <br />
 
-                                <label htmlFor={ans1}>a</label>
+                                <div>
+                              <label htmlFor={ans1}>a</label>
+
+                              <input type="radio" name="answer"
+                              onChange={(e) => this.props.onCorrectAnswer(e)}
+                              required
+                              />
+                                
                                 <input
                                 type="text"
                                 name={ans1}
-                                data-id={id}
+                               data-id={id}
                                 id={ans1}
-                                className="ans1"
-                                />
+                               className="ans1"
+                               />
+                                
+                              </div>
                                 <br />
 
-                                <label htmlFor={ans2}>b</label>
+                                <div>
+                              <label htmlFor={ans2}>b</label>
+
+                              <input type="radio" name="answer"
+                              onChange={(e) => this.props.onCorrectAnswer(e)}
+                              required
+                              />
+                                
                                 <input
                                 type="text"
                                 name={ans2}
-                                data-id={id}
+                               data-id={id}
                                 id={ans2}
-                                className="ans2"
-                                />
+                               className="ans2"
+                               />
+                                
+                              </div>
                                 <br />
 
-                                <label htmlFor={ans3}>c</label>
+                                <div>
+                              <label htmlFor={ans3}>c</label>
+
+                              <input type="radio" name="answer"
+                              onChange={(e) => this.props.onCorrectAnswer(e)}
+                              required
+                              />
+                                
                                 <input
                                 type="text"
                                 name={ans3}
-                                data-id={id}
+                               data-id={id}
                                 id={ans3}
-                                className="ans3"
-                                />
+                               className="ans3"
+                               />
+                                
+                              </div>
                                 <br />
+                              <div>
+                              <label htmlFor={ans4}>d</label>
 
-                              
-                                <label htmlFor={ans4}>d</label>
+                              <input type="radio" name="answer"
+                              onChange={(e) => this.props.onCorrectAnswer(e)}
+                              required
+                              />
+                                
                                 <input
                                 type="text"
                                 name={ans4}
@@ -84,6 +115,8 @@ class QuestionForm extends Component {
                                 id={ans4}
                                 className="ans4"
                                 />
+                                
+                              </div>
                                 <br />
 
                                 <button type="button"

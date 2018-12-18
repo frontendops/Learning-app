@@ -23,9 +23,7 @@ class App extends Component {
           ans4: ""
         },],
 
-        correctAnswers: [{
-          answer: ""
-        },]
+        correctAnswers: ""
     }
     
 }
@@ -90,8 +88,9 @@ deleteQuestion = (id) => {
 
 //function for selecting and displaying correct answers
 
-saveAnswer = (id, e) => {
-
+onCorrectAnswer = (e) => {
+  const correctAnswer = e.target.nextSibling.value;
+  this.setState({correctAnswers: correctAnswer});
 }
 
   render() {
@@ -120,6 +119,7 @@ saveAnswer = (id, e) => {
           handleSubmit={this.handleSubmit}
           handleFormChange={this.handleFormChange}
           deleteQuestion={this.deleteQuestion}
+          onCorrectAnswer={this.onCorrectAnswer}
           />
         )} />
 

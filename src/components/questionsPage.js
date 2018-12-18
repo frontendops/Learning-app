@@ -29,6 +29,7 @@ class QuestionsPage extends Component {
 
                 <QuestionForm questions={questions}
                 deleteQuestion={this.props.deleteQuestion}
+                onCorrectAnswer={this.props.onCorrectAnswer}
                 />
 
                 <button onClick={this.props.addQuestion}>Add new question</button>
