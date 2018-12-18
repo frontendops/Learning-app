@@ -24,6 +24,7 @@ class App extends Component {
         },],
 
         correctAnswer: "",
+
         allCorrectAnswers: []
     }
     
@@ -98,7 +99,7 @@ saveCorrectAnswer = () => {
   const correctAnswer = [...this.state.correctAnswer].join("");
   console.log(correctAnswer)
   this.setState({
-    allCorrectAnswers: this.state.allCorrectAnswers.concat({correctAnswer})
+    allCorrectAnswers: this.state.allCorrectAnswers.concat(correctAnswer)
   });
 }
 
@@ -136,6 +137,7 @@ saveCorrectAnswer = () => {
          <Route path="/test" render={() => (
           <DisplayTest 
           questions={this.state.questions}
+          allCorrectAnswers={this.state.allCorrectAnswers}
           />
         )} />
 
