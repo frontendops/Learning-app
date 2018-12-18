@@ -1,6 +1,6 @@
 import './styles/questionForm.css';
 import React, {Component}  from 'react';
-//import MultipeChoice from './multipleChoice'
+import FormInput from './formInput';
 
 class QuestionForm extends Component {
     constructor(props) {
@@ -65,84 +65,33 @@ class QuestionForm extends Component {
                                 />
                                 <br />
 
-                                <div>
-                              <label htmlFor={ans1}>a</label>
-
-                              <input type="radio" name="answer"
-                              onChange={(e) => this.props.onCorrectAnswer(e)}
-                              required
-                              />
-                                
-                                <input
-                                type="text"
-                                name={ans1}
-                               data-id={id}
-                                id={ans1}
-                                className="ans1"
-                                required
-                               />
-                                
-                              </div>
-                                <br />
-
-                                <div>
-                              <label htmlFor={ans2}>b</label>
-
-                              <input type="radio" name="answer"
-                              onChange={(e) => this.props.onCorrectAnswer(e)}
-                              required
-                              />
-                                
-                                <input
-                                type="text"
-                                name={ans2}
-                               data-id={id}
-                                id={ans2}
-                                className="ans2"
-                                required
-                               />
-                                
-                              </div>
-                                <br />
-
-                                <div>
-                              <label htmlFor={ans3}>c</label>
-
-                              <input type="radio" name="answer"
-                              onChange={(e) => this.props.onCorrectAnswer(e)}
-                              required
-                              />
-                                
-                                <input
-                                type="text"
-                                name={ans3}
-                               data-id={id}
-                                id={ans3}
-                                className="ans3"
-                                required
-                               />
-                                
-                              </div>
-                                <br />
-                              <div>
-                              <label htmlFor={ans4}>d</label>
-
-                              <input type="radio" name="answer"
-                              onChange={(e) => this.props.onCorrectAnswer(e)}
-                              required
-                              />
-                                
-                                <input
-                                type="text"
-                                name={ans4}
-                                data-id={id}
-                                id={ans4}
-                                className="ans4"
-                                required
+                                <FormInput label="a" 
+                                  id={id}
+                                  answerId={ans1}
+                                  onCorrectAnswer={this.props.onCorrectAnswer}
+                                  className="ans1"
                                 />
-                                
-                              </div>
-                                <br />
+
+                                <FormInput label="b" 
+                                  id={id}
+                                  answerId={ans2}
+                                  onCorrectAnswer={this.props.onCorrectAnswer}
+                                  className="ans2"
+                                />
+
+                                <FormInput label="c" 
+                                  id={id}
+                                  answerId={ans3}
+                                  onCorrectAnswer={this.props.onCorrectAnswer}
+                                  className="ans3"
+                                />
+
+                                <FormInput label="d" 
+                                  id={id}
+                                  answerId={ans4}
+                                  onCorrectAnswer={this.props.onCorrectAnswer}
+                                  className="ans4"
+                                />
 
                                 <button type="button"
                                 className="btn btn-danger"
