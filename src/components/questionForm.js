@@ -31,9 +31,9 @@ class QuestionForm extends Component {
                         let correctAnswer = `correct answer for question # ${id +1}`;
 
                         return (
-                            <div key={id}
-                            className="form"
-                            >
+                            <form key={id}
+                            onSubmit={this.props.saveCorrectAnswer}
+                            > 
                                 <label htmlFor={questionId}>{`question # ${id + 1}`}</label>
                                 <input
                                 type="text"
@@ -123,7 +123,9 @@ class QuestionForm extends Component {
                                 className="btn btn-danger"
                                 onClick={() => this.props.deleteQuestion(id)}
                                 >Delete</button>
-                            </div>
+
+                                <input type="submit" value="Save answer" />
+                            </form>
                
                );
                })}

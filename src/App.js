@@ -23,7 +23,8 @@ class App extends Component {
           ans4: ""
         },],
 
-        correctAnswers: ""
+        correctAnswer: "",
+        allCorrectAnswers: []
     }
     
 }
@@ -68,7 +69,7 @@ handleFormChange = (e) => {
   if (["question", "ans1", "ans2", "ans3", "ans4"].includes(e.target.className)) {
     let questions = [...this.state.questions]
     questions[e.target.dataset.id][e.target.className] = e.target.value
-    this.setState( {questions}, () => console.log(this.state.questions) )
+    
 
   } else {
     this.setState({ [e.target.name] : e.target.value})
@@ -90,7 +91,15 @@ deleteQuestion = (id) => {
 
 onCorrectAnswer = (e) => {
   const correctAnswer = e.target.nextSibling.value;
-  this.setState({correctAnswers: correctAnswer});
+  this.setState({correctAnswer: correctAnswer});
+}
+
+saveCorrectAnswer = () => {
+  const correctAnswer = [...this.state.correctAnswer].join("");
+  console.log(correctAnswer)
+  this.setState({
+    allCorrectAnswers: this.state.allCorrectAnswers.concat({correctAnswer})
+  });
 }
 
   render() {
@@ -120,6 +129,7 @@ onCorrectAnswer = (e) => {
           handleFormChange={this.handleFormChange}
           deleteQuestion={this.deleteQuestion}
           onCorrectAnswer={this.onCorrectAnswer}
+          saveCorrectAnswer={this.saveCorrectAnswer}
           />
         )} />
 
