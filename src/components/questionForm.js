@@ -25,8 +25,13 @@ class QuestionForm extends Component {
 
 
     render() {
+      let deletebtn;
 
-    
+    if (this.props.questions.length === 1) {
+      deletebtn = "off";
+    } else {
+      deletebtn = "";
+    }
      
         return (
             <div>
@@ -85,7 +90,7 @@ class QuestionForm extends Component {
                                 />
 
                                 <button type="button"
-                                className="btn btn-danger"
+                                className={`btn btn-danger ${deletebtn}`}
                                 onClick={() => this.props.deleteQuestion(id)}
                                 >Delete</button>
 
