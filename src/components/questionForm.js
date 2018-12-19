@@ -17,7 +17,7 @@ class QuestionForm extends Component {
 
       renderEditbutton = (id) => {
         if (this.props.clicked[id] === true) {
-          return <button className="btn-success"> change answer </button>;
+          return <input value="change answer" type="button" onClick={() => this.props.changeAnswer(id)} className="btn-success" />
         } else {
           return <div></div>;
         }

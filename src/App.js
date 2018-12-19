@@ -25,7 +25,7 @@ class App extends Component {
 
         correctAnswer: "",
         allCorrectAnswers: [],
-        clicked: [ false, false ],
+        clicked: [ false,],
     }
     
 }
@@ -97,7 +97,7 @@ onCorrectAnswer = (e) => {
 
 saveCorrectAnswer = () => {
   const correctAnswer = [...this.state.correctAnswer].join("");
-  console.log(correctAnswer)
+  
   this.setState({
     allCorrectAnswers: this.state.allCorrectAnswers.concat(correctAnswer)
   });
@@ -108,8 +108,15 @@ toggleSaveButton = (id) => {
   arr[id] = !arr[id]
 
   this.setState({ clicked: arr });
+}
 
-   
+changeAnswer = (id) => {
+  
+  let arr = this.state.allCorrectAnswers.slice();
+  arr[id] = this.state.correctAnswer;
+  
+  this.setState({ allCorrectAnswers: arr })
+
 }
 
   render() {
@@ -143,6 +150,7 @@ toggleSaveButton = (id) => {
 
           clicked={this.state.clicked}
           toggleSaveButton={this.toggleSaveButton}
+          changeAnswer={this.changeAnswer}
           />
         )} />
 
