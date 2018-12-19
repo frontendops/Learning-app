@@ -7,35 +7,26 @@ class QuestionForm extends Component {
         super(props);
 
         this.state = {
-            clicked: false,
-            value: 'Save answer'
+            
           
         }
         
     }
 
-      toggleSaveButton = () => {
-        this.setState({ clicked: !this.state.clicked });
 
-         if (this.state.clicked === false) {
-           this.setState({ value: 'Save answer'})
-         } else {
-          this.setState({ value: 'Answer saved'})
-          return <button className="btn-success"> change answer </button>
-         }
+
+      renderEditbutton = (id) => {
+        if (this.props.clicked[id] === true) {
+          return <button className="btn-success"> change answer </button>;
+        } else {
+          return <div></div>;
+        }
       }
-
 
 
     render() {
 
-      let editButton;
-
-      if (this.state.clicked === true) {
-        editButton = <button className="btn-success"> change answer </button>;
-      } else {
-        editButton = <div></div>
-      }
+    
      
         return (
             <div>
@@ -98,11 +89,11 @@ class QuestionForm extends Component {
                                 onClick={() => this.props.deleteQuestion(id)}
                                 >Delete</button>
 
-                                <input type="submit" value={this.state.value}
-                                className={`save-btn ${this.state.clicked}`}
-                                onClick={this.toggleSaveButton} />
+                                <input type="submit" value="Submit"
+                                className={`save-btn ${this.props.clicked[id]}`}
+                                onClick={() => this.props.toggleSaveButton(id)} />
 
-                                {editButton}
+                                {this.renderEditbutton(id)}
                             </form>
                
                );

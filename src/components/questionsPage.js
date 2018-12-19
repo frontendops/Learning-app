@@ -31,6 +31,8 @@ class QuestionsPage extends Component {
                 deleteQuestion={this.props.deleteQuestion}
                 onCorrectAnswer={this.props.onCorrectAnswer}
                 saveCorrectAnswer={this.props.saveCorrectAnswer}
+                clicked={this.props.clicked}
+                toggleSaveButton={this.props.toggleSaveButton}
                 />
 
                 <button onClick={this.props.addQuestion}>Add new question</button>

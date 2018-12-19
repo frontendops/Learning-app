@@ -24,8 +24,8 @@ class App extends Component {
         },],
 
         correctAnswer: "",
-
-        allCorrectAnswers: []
+        allCorrectAnswers: [],
+        clicked: [ false, false ],
     }
     
 }
@@ -103,6 +103,15 @@ saveCorrectAnswer = () => {
   });
 }
 
+toggleSaveButton = (id) => {
+  let arr = this.state.clicked.slice();
+  arr[id] = !arr[id]
+
+  this.setState({ clicked: arr });
+
+   
+}
+
   render() {
     return (
       <div>
@@ -131,6 +140,9 @@ saveCorrectAnswer = () => {
           deleteQuestion={this.deleteQuestion}
           onCorrectAnswer={this.onCorrectAnswer}
           saveCorrectAnswer={this.saveCorrectAnswer}
+
+          clicked={this.state.clicked}
+          toggleSaveButton={this.toggleSaveButton}
           />
         )} />
 
