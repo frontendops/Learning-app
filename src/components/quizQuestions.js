@@ -5,7 +5,8 @@ class QuizQuestion extends Component {
         super(props);
 
         this.state = {
-            chosenAnswer: ""
+            chosenAnswer: "",
+            currentQuestion: 0
         }
 
     }
@@ -15,25 +16,28 @@ class QuizQuestion extends Component {
         console.log(answer);
 
         if (answer === this.props.allCorrectAnswers[id]) {
-            console.log("correct!!")
+            alert("correct!!");
+            
         } else {
-            console.log("wrong")
+            alert("wrong");
         }
-
+        
+        this.setState( (prevState) =>
+         { return {currentQuestion: prevState.currentQuestion + 1}})
 
     } 
 
     render() {
-
+            let question = this.props.questions;
+            let id = this.state.currentQuestion;
 
         return(
             <div>
                 <form>
-                    {
-                        this.props.questions.map( (question, id) => (
+                   
 
                             <form key={id}>
-                                <h2>{question.question}</h2>
+                                <h2>{question[id].question}</h2>
 
                                 <div>
                                     
@@ -42,7 +46,7 @@ class QuizQuestion extends Component {
                                         onChange={(e) => this.checkAnswer(id,e)}
                                         required
                                         />
-                                        <label htmlFor={question.ans1}>{question.ans1}</label>
+                                        <label htmlFor={question[id].ans1}>{question[id].ans1}</label>
                                        
                                  
                                         <input type="radio"
@@ -50,7 +54,7 @@ class QuizQuestion extends Component {
                                         onChange={(e) => this.checkAnswer(id,e)}
                                         required
                                         />
-                                        <label htmlFor={question.ans2}>{question.ans2}</label>
+                                        <label htmlFor={question[id].ans2}>{question[id].ans2}</label>
                                        
                                   
                                         <input type="radio"
@@ -58,14 +62,14 @@ class QuizQuestion extends Component {
                                         onChange={(e) => this.checkAnswer(id,e)}
                                         required
                                         />
-                                        <label htmlFor={question.ans2}>{question.ans3}</label>
+                                        <label htmlFor={question[id].ans2}>{question[id].ans3}</label>
                                   
                                         <input type="radio"
                                         name="answer" 
                                         onChange={(e) => this.checkAnswer(id,e)}
                                         required
                                         />
-                                        <label htmlFor={question.ans2}>{question.ans4}</label>
+                                        <label htmlFor={question[id].ans2}>{question[id].ans4}</label>
 
                                     <input type="submit" value="Submit"
                                       />
@@ -74,8 +78,7 @@ class QuizQuestion extends Component {
 
                             </form>
                             
-                        ))
-                    }
+                   
                    
                 </form>
             </div>
