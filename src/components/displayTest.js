@@ -6,8 +6,9 @@ class DisplayTest extends Component {
     constructor(props) {
         super(props);
             this.state = { 
-               
+                
             }
+               
     }
 
     render() {
@@ -21,7 +22,10 @@ class DisplayTest extends Component {
                 <QuizQuestions 
                 questions={this.props.questions}
                 allCorrectAnswers={this.props.allCorrectAnswers}
+                
                 />
+
+
             </div>
 
         )

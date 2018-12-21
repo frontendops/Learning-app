@@ -6,7 +6,8 @@ class QuizQuestion extends Component {
 
         this.state = {
             chosenAnswer: "",
-            currentQuestion: 0
+            currentQuestion: 0,
+            endScreen: false
         }
 
     }
@@ -37,66 +38,73 @@ class QuizQuestion extends Component {
             this.setState( (prevState) =>
                 { return {currentQuestion: prevState.currentQuestion + 1}})
         } else {
-            alert("game over!!")
+            this.setState({ endScreen: true })
         }
     }
         
-       
-
-
-
+    
     
 
     render() {
             let question = this.props.questions;
             let id = this.state.currentQuestion;
 
-        return(
-            <div>
-                   
-                            <form key={id}>
-                                <h2>{question[id].question}</h2>
+            let endGameScreen = <div> The quiz Is Over !! </div>;
 
-                                <div>
+            
+            if (this.state.endScreen === false) {
+     
+                return(
+                    <div>
+                           
+                        <form key={id}>
+                            <h2>{question[id].question}</h2>
+
+                            <div>
+                                
+                                    <input type="radio"
+                                    name="answer" 
+                                    onChange={(e) => this.checkAnswer(id,e)}
+                                    required
+                                    />
+                                    <label htmlFor={question[id].ans1}>{question[id].ans1}</label>
                                     
-                                        <input type="radio"
-                                        name="answer" 
-                                        onChange={(e) => this.checkAnswer(id,e)}
-                                        required
-                                        />
-                                        <label htmlFor={question[id].ans1}>{question[id].ans1}</label>
-                                       
-                                 
-                                        <input type="radio"
-                                        name="answer" 
-                                        onChange={(e) => this.checkAnswer(id,e)}
-                                        required
-                                        />
-                                        <label htmlFor={question[id].ans2}>{question[id].ans2}</label>
-                                       
-                                  
-                                        <input type="radio"
-                                        name="answer" 
-                                        onChange={(e) => this.checkAnswer(id,e)}
-                                        required
-                                        />
-                                        <label htmlFor={question[id].ans2}>{question[id].ans3}</label>
-                                  
-                                        <input type="radio"
-                                        name="answer" 
-                                        onChange={(e) => this.checkAnswer(id,e)}
-                                        required
-                                        />
-                                        <label htmlFor={question[id].ans2}>{question[id].ans4}</label>
+                                
+                                    <input type="radio"
+                                    name="answer" 
+                                    onChange={(e) => this.checkAnswer(id,e)}
+                                    required
+                                    />
+                                    <label htmlFor={question[id].ans2}>{question[id].ans2}</label>
+                                    
+                                
+                                    <input type="radio"
+                                    name="answer" 
+                                    onChange={(e) => this.checkAnswer(id,e)}
+                                    required
+                                    />
+                                    <label htmlFor={question[id].ans2}>{question[id].ans3}</label>
+                                
+                                    <input type="radio"
+                                    name="answer" 
+                                    onChange={(e) => this.checkAnswer(id,e)}
+                                    required
+                                    />
+                                    <label htmlFor={question[id].ans2}>{question[id].ans4}</label>
 
-                                  
+                                
 
-                                </div>
+                            </div>
 
-                            </form>
-                                         
-            </div>
-        );
+                        </form>
+                                                 
+                    </div>
+                );
+            } else {
+                return (
+                   <div> {endGameScreen} </div> 
+                );
+            }
     }
 }
 
