@@ -62,9 +62,7 @@ addQuestion = () => {
   }))
 }
 
-handleSubmit = (e) => {
-    e.preventDefault()
-}
+
 
 handleFormChange = (e) => {
   if (["question", "ans1", "ans2", "ans3", "ans4"].includes(e.target.className)) {
@@ -95,7 +93,8 @@ onCorrectAnswer = (e) => {
   this.setState({correctAnswer: correctAnswer});
 }
 
-saveCorrectAnswer = () => {
+saveCorrectAnswer = (e) => {
+  e.preventDefault();
   const correctAnswer = [...this.state.correctAnswer].join("");
   
   this.setState({

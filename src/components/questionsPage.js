@@ -23,9 +23,11 @@ class QuestionsPage extends Component {
                 <h1>The quiz name is: {this.props.title}</h1>
                 <h2>There are {this.props.numValue} Questions </h2>
 
-            <form onSubmit={this.props.handleSubmit}
-            onChange={this.props.handleFormChange}
-            >
+           
+                <div
+                onChange={this.props.handleFormChange}
+
+                >
 
                 <QuestionForm questions={questions}
                 deleteQuestion={this.props.deleteQuestion}
@@ -39,11 +41,14 @@ class QuestionsPage extends Component {
                 <button onClick={this.props.addQuestion}>Add new question</button>
 
                  <Link to="/test" >
-                    <input type="submit" value="Submit" /> 
+                    <button className="btn btn-info"
+                    > next </button>
                     
                 </Link>
+                </div>
 
-            </form>
+
+         
                 
             </div>
         )

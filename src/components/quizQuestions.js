@@ -33,9 +33,7 @@ class QuizQuestion extends Component {
 
         return(
             <div>
-                <form>
                    
-
                             <form key={id}>
                                 <h2>{question[id].question}</h2>
 
@@ -76,10 +74,7 @@ class QuizQuestion extends Component {
                                 </div>
 
                             </form>
-                            
-                   
-                   
-                </form>
+                                         
             </div>
         );
     }
