@@ -16,6 +16,8 @@ class DisplayTest extends Component {
 
         return (
             <div>
+
+               <h1>{this.props.title} </h1> 
                 <QuizQuestions 
                 questions={this.props.questions}
                 allCorrectAnswers={this.props.allCorrectAnswers}

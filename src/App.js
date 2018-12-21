@@ -158,6 +158,7 @@ changeAnswer = (id) => {
           <DisplayTest 
           questions={this.state.questions}
           allCorrectAnswers={this.state.allCorrectAnswers}
+          title={this.state.title}
           />
         )} />
 

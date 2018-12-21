@@ -71,8 +71,7 @@ class QuizQuestion extends Component {
                                         />
                                         <label htmlFor={question[id].ans2}>{question[id].ans4}</label>
 
-                                    <input type="submit" value="Submit"
-                                      />
+                                  
 
                                 </div>
 
