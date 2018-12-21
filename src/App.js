@@ -16,11 +16,11 @@ class App extends Component {
         title: "",
         numValue: 2,
         questions: [{
-          question: "",
-          ans1: "",
-          ans2: "",
-          ans3: "",
-          ans4: ""
+          question: "question",
+          ans1: "answer1",
+          ans2: "answer2",
+          ans3: "answer3",
+          ans4: "answer4"
         },],
 
         correctAnswer: "",

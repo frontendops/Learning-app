@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class QuizQuestion extends Component {
     constructor(props) {
@@ -102,7 +103,12 @@ class QuizQuestion extends Component {
                 );
             } else {
                 return (
-                   <div> {endGameScreen} </div> 
+                   <div>
+                        <h1> {endGameScreen}  </h1>
+                        <Link to="/">
+                            <button className="btn btn-info"> Go Home </button>
+                        </Link>
+                   </div> 
                 );
             }
     }
