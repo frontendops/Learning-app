@@ -1,10 +1,11 @@
+import './styles/home.css';
 import React, {Component}  from 'react';
 import { Link } from 'react-router-dom';
 
 class Home extends Component {
     render() {
         return (
-            <div>
+            <div className="background-gradient">
                 <h1 className="">quizzly</h1>
 
                 <Link to="/create" >
@@ -12,7 +13,7 @@ class Home extends Component {
                 </Link>
                 
 
-                
+               
             </div>
         )
     }
