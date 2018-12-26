@@ -14,7 +14,6 @@ class App extends Component {
 
     this.state = {
         title: "",
-        numValue: 2,
         questions: [{
           question: "question",
           ans1: "answer1",
@@ -22,7 +21,6 @@ class App extends Component {
           ans3: "answer3",
           ans4: "answer4"
         },],
-
         correctAnswer: "",
         allCorrectAnswers: [],
         clicked: [ false,],
@@ -37,11 +35,7 @@ handleInput = (identifier, text) => {
   this.setState({ questions })
 }
   
-handleValChange = (event) => {
-  this.setState({
-      numValue: event.target.value
-  });
-}
+
 
 handleNameChange = (event) => {
   this.setState({

@@ -8,7 +8,8 @@ class QuizQuestion extends Component {
         this.state = {
             chosenAnswer: "",
             currentQuestion: 0,
-            endScreen: false
+            endScreen: false,
+            totalCorrect: 0,
         }
 
     }
@@ -20,6 +21,10 @@ class QuizQuestion extends Component {
        
 
             if (answer === this.props.allCorrectAnswers[id]  ) {
+                this.setState( prevState => {
+                    return {totalCorrect: prevState.totalCorrect + 1}
+                })
+                console.log(this.state.totalCorrect);
                 alert("correct!!");
                 this.checkEnd();
             } else {
@@ -50,7 +55,9 @@ class QuizQuestion extends Component {
             let question = this.props.questions;
             let id = this.state.currentQuestion;
 
-            let endGameScreen = <div> The quiz Is Over !! </div>;
+            let endGameScreen = <div> The quiz Is Over !! 
+                <h2>you got {this.state.totalCorrect} / {question.length} quesions correct </h2>
+            </div>;
 
             
             if (this.state.endScreen === false) {

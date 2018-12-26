@@ -22,18 +22,7 @@ class MakeQuiz extends Component {
                 ></input>
                 </div>
 
-                <form>
-                    <div className="form-group">
-                        <label htmlFor="formControlRange">Time length of quiz in min (Slide to select)</label>
-                        <input type="range" 
-                        className="form-control-range" 
-                        id="formControlRange"
-                        min="2" max="20" step="1"
-                        value={this.props.numValue}
-                        onChange={this.props.handleValChange}
-                        ></input>
-                    </div>
-                </form>
+               
 
                 <div>{this.props.numValue}</div>
 
