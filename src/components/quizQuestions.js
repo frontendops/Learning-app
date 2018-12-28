@@ -113,7 +113,9 @@ class QuizQuestion extends Component {
                    <div>
                         <h1> {endGameScreen}  </h1>
                         <Link to="/">
-                            <button className="btn btn-info"> Go Home </button>
+                            <button className="btn btn-info"
+                            onClick={this.props.resetQuiz}
+                            > Go Home </button>
                         </Link>
                    </div> 
                 );

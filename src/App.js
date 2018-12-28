@@ -112,6 +112,24 @@ changeAnswer = (id) => {
 
 }
 
+//Endgame (not the avengers xD)
+
+resetQuiz = () => {
+    this.setState({
+        title: "",
+        questions: [{
+          question: "",
+          ans1: "",
+          ans2: "",
+          ans3: "",
+          ans4: ""
+        },],
+        correctAnswer: "",
+        allCorrectAnswers: [],
+        clicked: [ false,]
+    })
+}
+
   render() {
     return (
       <div>
@@ -152,6 +170,7 @@ changeAnswer = (id) => {
           questions={this.state.questions}
           allCorrectAnswers={this.state.allCorrectAnswers}
           title={this.state.title}
+          resetQuiz={this.resetQuiz}
           />
         )} />
 

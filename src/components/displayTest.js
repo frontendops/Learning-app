@@ -22,7 +22,7 @@ class DisplayTest extends Component {
                 <QuizQuestions 
                 questions={this.props.questions}
                 allCorrectAnswers={this.props.allCorrectAnswers}
-                
+                resetQuiz={this.props.resetQuiz}
                 />
 
 
