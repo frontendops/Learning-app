@@ -6,13 +6,13 @@ class Home extends Component {
     render() {
         return (
             <div className="background-gradient">
-                <h1 className="">quizzly</h1>
-
-                <Link to="/create" >
-                    <button type="button" className="btn btn-primary">create quiz</button>
-                </Link>
-                
-
+                <h1 className="logo">Quizzly</h1>
+                   
+                   <div className="btn-container">
+                    <Link to="/create" >
+                        <button type="button" className="btn btn-primary">create quiz</button>
+                    </Link>
+                   </div>
                
             </div>
         )

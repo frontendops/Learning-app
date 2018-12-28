@@ -18,10 +18,26 @@ class QuestionsPage extends Component {
       
         let {questions} = this.props
 
+        let mainQuestion = questions[0].question;
+        let ans1 = questions[0].ans1
+
+        let submitBtn;
+
+        if (mainQuestion.length > 2) {
+            submitBtn = <Link to="/test" >
+            <button className="btn btn-info"
+            > next </button>    
+            </Link>
+        } else {
+            submitBtn = <div> </div>;
+        }     
+
+
+
         return (
             <div>
                 <h1>The quiz name is: {this.props.title}</h1>
-                <h2>There are {this.props.numValue} Questions </h2>
+                <h3> Add as many questions as you would like </h3>
 
            
                 <div
@@ -40,16 +56,11 @@ class QuestionsPage extends Component {
 
                 <button onClick={this.props.addQuestion}>Add new question</button>
 
-                 <Link to="/test" >
-                    <button className="btn btn-info"
-                    > next </button>
-                    
-                </Link>
                 </div>
 
+                {submitBtn}
 
-         
-                
+              
             </div>
         )
     }
