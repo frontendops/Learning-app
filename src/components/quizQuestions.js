@@ -49,7 +49,13 @@ class QuizQuestion extends Component {
     }
         
     
-    
+    restartQuiz = () => {
+        this.setState({
+            currentQuestion: 0,
+            endScreen: false,
+            totalCorrect: 0,
+        })
+    }
 
     render() {
             let question = this.props.questions;
@@ -112,6 +118,11 @@ class QuizQuestion extends Component {
                 return (
                    <div>
                         <h1> {endGameScreen}  </h1>
+                      
+                        <button className="btn btn-info"
+                        onClick={this.restartQuiz}
+                        >Retake quiz</button>   
+
                         <Link to="/">
                             <button className="btn btn-info"
                             onClick={this.props.resetQuiz}
