@@ -1,12 +1,10 @@
+import './styles/makeQuiz.css';
 import React, {Component}  from 'react';
 import { Link } from 'react-router-dom';
 
 
-
 class MakeQuiz extends Component {
   
-
-
 
     render() {
         let nextBtn;
@@ -21,7 +19,7 @@ class MakeQuiz extends Component {
 
         return (
 
-            <div>
+            <div className="mkquiz-container">
 
                 <form required>
 
