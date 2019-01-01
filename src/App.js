@@ -164,6 +164,7 @@ resetQuiz = () => {
           deleteQuestion={this.deleteQuestion}
           onCorrectAnswer={this.onCorrectAnswer}
           saveCorrectAnswer={this.saveCorrectAnswer}
+          allCorrectAnswers={this.state.allCorrectAnswers}
 
           clicked={this.state.clicked}
           toggleSaveButton={this.toggleSaveButton}

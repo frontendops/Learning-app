@@ -23,7 +23,7 @@ class QuestionsPage extends Component {
 
         let submitBtn;
 
-        if (mainQuestion.length > 2) {
+        if (questions.length === this.props.allCorrectAnswers.length) {
             submitBtn = <Link to="/test" >
             <button className="btn btn-info"
             > next </button>    
