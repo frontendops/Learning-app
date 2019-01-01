@@ -72,9 +72,15 @@ handleFormChange = (e) => {
 
 deleteQuestion = (id) => {
   let questions = [...this.state.questions];
+  let allCorrectAnswers = [...this.state.allCorrectAnswers];
 
   this.setState({ questions: questions.filter( (question, idx)  => {
       return idx !== id
+  })
+})
+
+  this.setState({ allCorrectAnswers: allCorrectAnswers.filter( (answer, idx) => {
+    return idx !== id
   })
 })
 
