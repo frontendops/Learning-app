@@ -1,3 +1,4 @@
+import './styles/quizQuestions.css';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -75,36 +76,48 @@ class QuizQuestion extends Component {
                             <h2>{question[id].question}</h2>
 
                             <div>
-                                
-                                    <input type="radio"
-                                    name="answer" 
-                                    onChange={(e) => this.checkAnswer(id,e)}
-                                    required
-                                    />
-                                    <label htmlFor={question[id].ans1}>{question[id].ans1}</label>
+                                <ul className="quiz-questions">
+                                    <li>
+                                        <input type="radio"
+                                        name="answer" 
+                                        onChange={(e) => this.checkAnswer(id,e)}
+                                        className="answer-option"
+                                        required
+                                        />
+                                        <label htmlFor={question[id].ans1}>{question[id].ans1}</label>
+                                    </li>
                                     
-                                
-                                    <input type="radio"
-                                    name="answer" 
-                                    onChange={(e) => this.checkAnswer(id,e)}
-                                    required
-                                    />
-                                    <label htmlFor={question[id].ans2}>{question[id].ans2}</label>
+                                    <li>
+                                        <input type="radio"
+                                        name="answer" 
+                                        onChange={(e) => this.checkAnswer(id,e)}
+                                        className="answer-option"
+                                        required
+                                        />
+                                        <label htmlFor={question[id].ans2}>{question[id].ans2}</label>
+                                    </li>
                                     
+                                    <li>
+                                        <input type="radio"
+                                        name="answer" 
+                                        onChange={(e) => this.checkAnswer(id,e)}
+                                        className="answer-option"
+                                        required
+                                        />
+                                        <label htmlFor={question[id].ans2}>{question[id].ans3}</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="radio"
+                                        name="answer" 
+                                        onChange={(e) => this.checkAnswer(id,e)}
+                                        className="answer-option"
+                                        required
+                                        />
+                                        <label htmlFor={question[id].ans2}>{question[id].ans4}</label>
+                                    </li>
                                 
-                                    <input type="radio"
-                                    name="answer" 
-                                    onChange={(e) => this.checkAnswer(id,e)}
-                                    required
-                                    />
-                                    <label htmlFor={question[id].ans2}>{question[id].ans3}</label>
-                                
-                                    <input type="radio"
-                                    name="answer" 
-                                    onChange={(e) => this.checkAnswer(id,e)}
-                                    required
-                                    />
-                                    <label htmlFor={question[id].ans2}>{question[id].ans4}</label>
+                                </ul>
 
                                 
 

@@ -1,0 +1,41 @@
+.quiz-questions {
+     list-style-type:none;
+     margin:25px 0 0 0;
+     padding:0;
+}
+
+.quiz-questions li {
+     float:left;
+     margin:0 5px 0 0;
+    width:100px;
+    height:40px;
+    position:relative;
+}
+
+.quiz-questions label, .quiz-questions input {
+    display:block;
+    position:absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.quiz-questions input[type="radio"] {
+    opacity:0.01;
+    z-index:100;
+}
+
+.quiz-questions input[type="radio"]:checked + label,
+.Checked + label {
+    background:yellow;
+}
+
+.quiz-questions label {
+     padding:5px;
+     border:1px solid #CCC; 
+     cursor:pointer;
+    z-index:90;
+}
+
+.quiz-questions label:hover {
+     background:#DDD;
+}
