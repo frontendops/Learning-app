@@ -17,15 +17,15 @@ class QuizQuestion extends Component {
 
     checkAnswer = (id, e) => {
         const answer = e.target.nextSibling.innerHTML;
-        console.log(answer);
-
-       
+        const answerEl = e.target.nextSibling;
+        
+        answerEl.classList.add("correct");
 
             if (answer === this.props.allCorrectAnswers[id]  ) {
                 this.setState( prevState => {
                     return {totalCorrect: prevState.totalCorrect + 1}
                 })
-                console.log(this.state.totalCorrect);
+                
                 alert("correct!!");
                 this.checkEnd();
             } else {
@@ -84,7 +84,9 @@ class QuizQuestion extends Component {
                                         className="answer-option"
                                         required
                                         />
-                                        <label htmlFor={question[id].ans1}>{question[id].ans1}</label>
+                                        <label htmlFor={question[id].ans1}
+                                        className="blue "
+                                        >{question[id].ans1}</label>
                                     </li>
                                     
                                     <li>
@@ -94,7 +96,9 @@ class QuizQuestion extends Component {
                                         className="answer-option"
                                         required
                                         />
-                                        <label htmlFor={question[id].ans2}>{question[id].ans2}</label>
+                                        <label htmlFor={question[id].ans2}
+                                        className="blue "
+                                        >{question[id].ans2}</label>
                                     </li>
                                     
                                     <li>
@@ -104,7 +108,9 @@ class QuizQuestion extends Component {
                                         className="answer-option"
                                         required
                                         />
-                                        <label htmlFor={question[id].ans2}>{question[id].ans3}</label>
+                                        <label htmlFor={question[id].ans2}
+                                        className="blue "
+                                        >{question[id].ans3}</label>
                                     </li>
 
                                     <li>
@@ -114,7 +120,9 @@ class QuizQuestion extends Component {
                                         className="answer-option"
                                         required
                                         />
-                                        <label htmlFor={question[id].ans2}>{question[id].ans4}</label>
+                                        <label htmlFor={question[id].ans2}
+                                        className="blue "
+                                        >{question[id].ans4}</label>
                                     </li>
                                 
                                 </ul>

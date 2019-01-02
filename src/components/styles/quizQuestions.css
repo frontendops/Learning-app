@@ -24,10 +24,6 @@
     z-index:100;
 }
 
-.quiz-questions input[type="radio"]:checked + label,
-.Checked + label {
-    background:yellow;
-}
 
 .quiz-questions label {
      padding:5px;
@@ -38,4 +34,16 @@
 
 .quiz-questions label:hover {
      background:#DDD;
+}
+
+.blue {
+    background-color: aliceblue;
+}
+
+.wrong {
+    background-color: lightcoral;
+}
+
+.correct {
+    background-color: aquamarine;
 }
