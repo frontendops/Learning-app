@@ -17,7 +17,7 @@ class QuestionForm extends Component {
 
       renderEditbutton = (id) => {
         if (this.props.clicked[id] === true) {
-          return <input value="change answer" type="button" onClick={() => this.props.changeAnswer(id)} className="btn-success" />
+          return <input value="change answer" type="button" onClick={() => this.props.changeAnswer(id)} className="btn-success changeAns" />
         } else {
           return <div></div>;
         }
@@ -51,13 +51,14 @@ class QuestionForm extends Component {
                             required
                             className="form"
                             > 
-                                <label htmlFor={questionId}>{`question # ${id + 1}`}</label>
+                                <label htmlFor={questionId}>{`# ${id + 1}`}</label>
                                 <input
                                 type="text"
                                 name={questionId}
                                 data-id={id}
                                 id={questionId}
                                 className="question"
+                                placeholder="Type your question here"
                                 required
                                 />
                                 <br />
@@ -91,7 +92,7 @@ class QuestionForm extends Component {
                                 />
 
                                 <button type="button"
-                                className={`btn btn-danger ${deletebtn}`}
+                                className={`btn btn-danger delete-btn ${deletebtn}`}
                                 onClick={() => this.props.deleteQuestion(id)}
                                 >Delete</button>
 

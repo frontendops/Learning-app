@@ -1,4 +1,7 @@
 
+.save-btn {
+    cursor: pointer;
+}
 
 .save-btn.false {
    color: purple;
@@ -14,12 +17,29 @@
     pointer-events: none;
 }
 
+.delete-btn {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+.changeAns {
+    cursor: pointer;
+}
+
 .form {
     padding: 15px;
     background-color: rgba(196, 196, 196, 0.23);
     height: 250px;
-    width: 300px;
-    margin: 0 auto 15px;
+    max-width: 600px;
+    margin: 0 auto 20px;
     border-radius: 10px;
    
+}
+
+.form input.question {
+    width: 60%;
+}
+.ans1, .ans2, .ans3, .ans4{
+    min-width: 80%;
 }

@@ -24,7 +24,7 @@ class QuestionsPage extends Component {
         if (questions.length === this.props.allCorrectAnswers.length) {
             submitBtn = <Link to="/test" >
             <button className="btn btn-info"
-            > next </button>    
+            > Save and start </button>    
             </Link>
         } else {
             submitBtn = <div> </div>;
