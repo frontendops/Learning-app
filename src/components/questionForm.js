@@ -49,6 +49,7 @@ class QuestionForm extends Component {
                             <form key={id}
                             onSubmit={this.props.saveCorrectAnswer}
                             required
+                            className="form"
                             > 
                                 <label htmlFor={questionId}>{`question # ${id + 1}`}</label>
                                 <input

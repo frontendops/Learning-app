@@ -1,3 +1,4 @@
+import './styles/questionsPage.css';
 import React, {Component}  from 'react';
 import QuestionForm from './questionForm.js';
 import { Link } from 'react-router-dom';
@@ -18,9 +19,6 @@ class QuestionsPage extends Component {
       
         let {questions} = this.props
 
-        let mainQuestion = questions[0].question;
-        let ans1 = questions[0].ans1
-
         let submitBtn;
 
         if (questions.length === this.props.allCorrectAnswers.length) {
@@ -35,7 +33,7 @@ class QuestionsPage extends Component {
 
 
         return (
-            <div>
+            <div className="form-container">
                 <h1>The quiz name is: {this.props.title}</h1>
                 <h3> Add as many questions as you would like </h3>
 
