@@ -57,16 +57,27 @@ addQuestion = () => {
 }
 
 
-
-handleFormChange = (e) => {
-  if (["question", "ans1", "ans2", "ans3", "ans4"].includes(e.target.className)) {
-    let questions = [...this.state.questions]
-    questions[e.target.dataset.id][e.target.className] = e.target.value
+//old function
+//handleFormChange = (e) => {
+//  if (["question", "ans1", "ans2", "ans3", "ans4"].includes(e.target.className)) {
+//    let questions = [...this.state.questions]
+//    questions[e.target.dataset.id][e.target.className] = e.target.value
     
 
-  } else {
-    this.setState({ [e.target.name] : e.target.value})
-  }
+//  } else {
+//    this.setState({ [e.target.name] : e.target.value})
+//  }
+//}
+
+handleFormChange = (e) => {
+  let questions = [...this.state.questions];
+  const name = e.target.name;
+  const value = e.target.value;
+  questions[e.target.dataset.id][name] = value;
+
+  this.setState({ questions});
+
+  
 }
 
 

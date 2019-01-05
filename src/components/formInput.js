@@ -17,6 +17,8 @@ function FormInput(props) {
           data-id={props.id} 
           id={props.answerId}
           className={props.className}
+          value={props.value}
+          onChange={(e) => props.handleFormChange(e)}
           required
          />
           

@@ -38,10 +38,7 @@ class QuestionsPage extends Component {
                 <h3> Add as many questions as you would like </h3>
 
            
-                <div
-                onChange={this.props.handleFormChange}
-
-                >
+                <div>
 
                 <QuestionForm questions={questions}
                 deleteQuestion={this.props.deleteQuestion}
@@ -50,6 +47,7 @@ class QuestionsPage extends Component {
                 clicked={this.props.clicked}
                 toggleSaveButton={this.props.toggleSaveButton}
                 changeAnswer={this.props.changeAnswer}
+                handleFormChange={this.props.handleFormChange}
                 />
 
                 <button onClick={this.props.addQuestion}>Add new question</button>

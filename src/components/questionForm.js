@@ -26,6 +26,7 @@ class QuestionForm extends Component {
 
     render() {
       let deletebtn;
+      let questions = this.props.questions;
 
     if (this.props.questions.length === 1) {
       deletebtn = "off";
@@ -37,11 +38,11 @@ class QuestionForm extends Component {
             <div>
                 
                { this.props.questions.map( (val, id ) => {
-                        let questionId = `Question-${id}`;
-                        let ans1 = `ans1 for question ${id}`;
-                        let ans2 = `ans2 for question ${id}`;
-                        let ans3 = `ans3 for question ${id}`;
-                        let ans4 = `ans4 for question ${id}`;
+                        let questionId = `question`;
+                        let ans1 = `ans1`;
+                        let ans2 = `ans2`;
+                        let ans3 = `ans3`;
+                        let ans4 = `ans4`;
 
                         
 
@@ -59,6 +60,8 @@ class QuestionForm extends Component {
                                 id={questionId}
                                 className="question"
                                 placeholder="Type your question here"
+                                value={questions[id].question}
+                                onChange={(e) => this.props.handleFormChange(e)}
                                 required
                                 />
                                 <br />
@@ -67,6 +70,8 @@ class QuestionForm extends Component {
                                   id={id}
                                   answerId={ans1}
                                   onCorrectAnswer={this.props.onCorrectAnswer}
+                                  value={questions[id].ans1}
+                                  handleFormChange={this.props.handleFormChange}
                                   className="ans1"
                                 />
 
@@ -74,6 +79,8 @@ class QuestionForm extends Component {
                                   id={id}
                                   answerId={ans2}
                                   onCorrectAnswer={this.props.onCorrectAnswer}
+                                  value={questions[id].ans2}
+                                  handleFormChange={this.props.handleFormChange}
                                   className="ans2"
                                 />
 
@@ -81,6 +88,9 @@ class QuestionForm extends Component {
                                   id={id}
                                   answerId={ans3}
                                   onCorrectAnswer={this.props.onCorrectAnswer}
+                                  value={questions[id].ans3}
+                                  handleFormChange={this.props.handleFormChange}
+                                  change
                                   className="ans3"
                                 />
 
@@ -88,6 +98,8 @@ class QuestionForm extends Component {
                                   id={id}
                                   answerId={ans4}
                                   onCorrectAnswer={this.props.onCorrectAnswer}
+                                  value={questions[id].ans4}
+                                  handleFormChange={this.props.handleFormChange}
                                   className="ans4"
                                 />
 

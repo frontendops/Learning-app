@@ -19,17 +19,17 @@ class QuizQuestion extends Component {
         const answer = e.target.nextSibling.innerHTML;
         const answerEl = e.target.nextSibling;
         
-        answerEl.classList.add("correct");
-
-            if (answer === this.props.allCorrectAnswers[id]  ) {
-                this.setState( prevState => {
-                    return {totalCorrect: prevState.totalCorrect + 1}
-                })
-                
-                alert("correct!!");
+        
+        if (answer === this.props.allCorrectAnswers[id]  ) {
+            //this needs to go in a seperate func in a sep button
+            this.setState( prevState => {
+                return {totalCorrect: prevState.totalCorrect + 1}
+            })
+            
+                answerEl.classList.add("correct");           
                 this.checkEnd();
             } else {
-                alert("wrong");
+                answerEl.classList.add("wrong");
                 this.checkEnd();
                 
             }
