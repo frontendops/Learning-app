@@ -11,6 +11,7 @@ class QuizQuestion extends Component {
             currentQuestion: 0,
             endScreen: false,
             totalCorrect: 0,
+            chosen: false
         }
 
     }
@@ -18,6 +19,8 @@ class QuizQuestion extends Component {
     checkAnswer = (id, e) => {
         const answer = e.target.nextSibling.innerHTML;
         const answerEl = e.target.nextSibling;
+
+        this.setState({chosen: true});
         
         
         if (answer === this.props.allCorrectAnswers[id]  ) {
@@ -25,21 +28,18 @@ class QuizQuestion extends Component {
             this.setState( prevState => {
                 return {totalCorrect: prevState.totalCorrect + 1}
             })
-            
                 answerEl.classList.add("correct");           
-                this.checkEnd();
             } else {
                 answerEl.classList.add("wrong");
-                this.checkEnd();
-                
+
             }
 
-           
 
         }
 
         
     checkEnd = () => {
+        this.setState({ chosen: false})
         if (this.state.currentQuestion < this.props.allCorrectAnswers.length - 1) {
 
             this.setState( (prevState) =>
@@ -61,6 +61,13 @@ class QuizQuestion extends Component {
     render() {
             let question = this.props.questions;
             let id = this.state.currentQuestion;
+            let nextBtn;
+
+            if( this.state.chosen === true) {
+                nextBtn  = <button onClick={this.checkEnd}>next question</button>;
+            } else {
+                nextBtn = <div></div>;
+            }
 
             let endGameScreen = <div> The quiz Is Over !! 
                 <h2>you got {this.state.totalCorrect} / {question.length} quesions correct </h2>
@@ -127,7 +134,7 @@ class QuizQuestion extends Component {
                                 
                                 </ul>
 
-                                
+                                {nextBtn}
 
                             </div>
 
@@ -149,6 +156,11 @@ class QuizQuestion extends Component {
                             onClick={this.props.resetQuiz}
                             > Go Home </button>
                         </Link>
+
+                        <div>
+                            <h2>results</h2>
+
+                        </div>
                    </div> 
                 );
             }

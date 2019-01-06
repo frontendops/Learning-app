@@ -75,7 +75,7 @@ handleFormChange = (e) => {
   const value = e.target.value;
   questions[e.target.dataset.id][name] = value;
 
-  this.setState({ questions});
+  this.setState({ questions });
 
   
 }
@@ -97,7 +97,7 @@ deleteQuestion = (id) => {
 
 }
 
-//function for selecting and displaying correct answers
+//functions for selecting and displaying correct answers
 
 onCorrectAnswer = (e) => {
   const correctAnswer = e.target.nextSibling.value;
