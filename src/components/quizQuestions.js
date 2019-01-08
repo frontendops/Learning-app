@@ -1,6 +1,7 @@
 import './styles/quizQuestions.css';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Results from './results.js';
 
 class QuizQuestion extends Component {
     constructor(props) {
@@ -20,8 +21,11 @@ class QuizQuestion extends Component {
         const answer = e.target.nextSibling.innerHTML;
         const answerEl = e.target.nextSibling;
 
-        this.setState({chosen: true});
-        
+        this.setState({ chosen: true });
+       //function to add chosen user question
+       // this.setState( prevState => ({ 
+       //     allUserAnswers: [...prevState.allUserAnswers, answer]
+       // }));
         
         if (answer === this.props.allCorrectAnswers[id]  ) {
             //this needs to go in a seperate func in a sep button
@@ -62,6 +66,13 @@ class QuizQuestion extends Component {
             let question = this.props.questions;
             let id = this.state.currentQuestion;
             let nextBtn;
+            let disabled;
+
+            if (this.state.chosen === true) {
+                disabled = "disabled";
+            } else {
+                disabled = " ";
+            }
 
             if( this.state.chosen === true) {
                 nextBtn  = <button onClick={this.checkEnd}>next question</button>;
@@ -82,7 +93,7 @@ class QuizQuestion extends Component {
                         <form key={id}>
                             <h2>{question[id].question}</h2>
 
-                            <div>
+                            <div className={`${disabled}`}>
                                 <ul className="quiz-questions">
                                     <li>
                                         <input type="radio"
@@ -134,10 +145,10 @@ class QuizQuestion extends Component {
                                 
                                 </ul>
 
-                                {nextBtn}
 
                             </div>
 
+                                {nextBtn}
                         </form>
                                                  
                     </div>
@@ -157,10 +168,11 @@ class QuizQuestion extends Component {
                             > Go Home </button>
                         </Link>
 
-                        <div>
-                            <h2>results</h2>
-
-                        </div>
+                        <Results 
+                        questions={this.props.questions}
+                        allCorrectAnswers={this.props.allCorrectAnswers}
+                        />
+                        
                    </div> 
                 );
             }

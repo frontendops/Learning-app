@@ -47,3 +47,7 @@
 .correct {
     background-color: aquamarine;
 }
+
+.disabled {
+    pointer-events: none;
+}

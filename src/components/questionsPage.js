@@ -33,7 +33,7 @@ class QuestionsPage extends Component {
 
 
         return (
-            <div className="form-container">
+            <div className="form-container text-center">
                 <h1>The quiz name is: {this.props.title}</h1>
                 <h3> Add as many questions as you would like </h3>
 
@@ -50,7 +50,7 @@ class QuestionsPage extends Component {
                 handleFormChange={this.props.handleFormChange}
                 />
 
-                <button onClick={this.props.addQuestion}>Add new question</button>
+                <button className="btn btn-success" onClick={this.props.addQuestion}>Add new question</button>
 
                 </div>
 
