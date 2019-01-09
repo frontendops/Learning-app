@@ -10,6 +10,7 @@ class QuizQuestion extends Component {
         this.state = {
             chosenAnswer: "",
             currentQuestion: 0,
+            allUserAnswers: [],
             endScreen: false,
             totalCorrect: 0,
             chosen: false
@@ -23,9 +24,9 @@ class QuizQuestion extends Component {
 
         this.setState({ chosen: true });
        //function to add chosen user question
-       // this.setState( prevState => ({ 
-       //     allUserAnswers: [...prevState.allUserAnswers, answer]
-       // }));
+        this.setState( prevState => ({ 
+            allUserAnswers: [...prevState.allUserAnswers, answer]
+        }));
         
         if (answer === this.props.allCorrectAnswers[id]  ) {
             //this needs to go in a seperate func in a sep button
@@ -88,12 +89,12 @@ class QuizQuestion extends Component {
             if (this.state.endScreen === false) {
      
                 return(
-                    <div>
+                    <div className="text-center">
                            
                         <form key={id}>
                             <h2>{question[id].question}</h2>
 
-                            <div className={`${disabled}`}>
+                            <div className={`answers ${disabled}`}>
                                 <ul className="quiz-questions">
                                     <li>
                                         <input type="radio"
@@ -171,6 +172,7 @@ class QuizQuestion extends Component {
                         <Results 
                         questions={this.props.questions}
                         allCorrectAnswers={this.props.allCorrectAnswers}
+                        allUserAnswers={this.state.allUserAnswers}
                         />
                         
                    </div> 

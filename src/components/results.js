@@ -3,14 +3,21 @@ import React from 'react';
 function Results(props) {
     return (
         <div>
-            <h2 className="text-center">Results</h2>
-            <ul>
+            <h2 className="">Results</h2>
+            <ul class="list-group">
                 {props.questions.map( (question, id) => {
+                    let status;
+                    if (props.allUserAnswers[id] === props.allCorrectAnswers[id]) {
+                        status = "list-group-item-success";
+                    } else {
+                        status= "list-group-item-danger";
+                    }
+                    
                     return (
-                        <div>
-                            <ul>#{id + 1}: {question.question}</ul>
-                            <ul> The correct answer was: {props.allCorrectAnswers[id]}</ul>
-                        </div>
+                        <li class={`list-group-item ${status}`}>
+                    #{id + 1}: {question.question}. Your answer was was: {props.allUserAnswers[id]}
+                        </li>
+                        
                     )
                 })}
             </ul>

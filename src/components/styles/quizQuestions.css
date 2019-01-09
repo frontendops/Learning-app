@@ -1,14 +1,15 @@
 .quiz-questions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
      list-style-type:none;
      margin:25px 0 0 0;
      padding:0;
 }
 
 .quiz-questions li {
-     float:left;
-     margin:0 5px 0 0;
-    width:100px;
-    height:40px;
+    
+    height:80px;
     position:relative;
 }
 
@@ -50,4 +51,19 @@
 
 .disabled {
     pointer-events: none;
+}
+
+ul {
+    margin: 0 auto;
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.answers {
+    max-width: 800px;
+    margin: 0 auto;
 }
