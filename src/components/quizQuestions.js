@@ -60,6 +60,8 @@ class QuizQuestion extends Component {
             currentQuestion: 0,
             endScreen: false,
             totalCorrect: 0,
+            allUserAnswers: []
+
         })
     }
 
@@ -76,12 +78,12 @@ class QuizQuestion extends Component {
             }
 
             if( this.state.chosen === true) {
-                nextBtn  = <button onClick={this.checkEnd}>next question</button>;
+                nextBtn  = <button className="btn btn-secondary" onClick={this.checkEnd}>next question</button>;
             } else {
                 nextBtn = <div></div>;
             }
 
-            let endGameScreen = <div> The quiz Is Over !! 
+            let endGameScreen = <div className="text-center"> The quiz Is Over !! 
                 <h2>you got {this.state.totalCorrect} / {question.length} quesions correct </h2>
             </div>;
 
@@ -156,7 +158,7 @@ class QuizQuestion extends Component {
                 );
             } else {
                 return (
-                   <div>
+                   <div className="text-center">
                         <h1> {endGameScreen}  </h1>
                       
                         <button className="btn btn-info"

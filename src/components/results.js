@@ -2,9 +2,9 @@ import React from 'react';
 
 function Results(props) {
     return (
-        <div>
-            <h2 className="">Results</h2>
-            <ul class="list-group">
+        <div className="text-center">
+            <h2>Results</h2>
+            <ul class="list-group text-left">
                 {props.questions.map( (question, id) => {
                     let status;
                     if (props.allUserAnswers[id] === props.allCorrectAnswers[id]) {
@@ -12,10 +12,10 @@ function Results(props) {
                     } else {
                         status= "list-group-item-danger";
                     }
-                    
+
                     return (
                         <li class={`list-group-item ${status}`}>
-                    #{id + 1}: {question.question}. Your answer was was: {props.allUserAnswers[id]}
+                    #{id + 1}: {question.question}. Your answer was: <b>{props.allUserAnswers[id]}</b>
                         </li>
                         
                     )

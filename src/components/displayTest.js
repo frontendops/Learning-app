@@ -16,9 +16,9 @@ class DisplayTest extends Component {
 
 
         return (
-            <div>
+            <div className="text-center">
 
-               <h1>{this.props.title} </h1> 
+               <h1><b>{this.props.title} </b></h1> 
                 <QuizQuestions 
                 questions={this.props.questions}
                 allCorrectAnswers={this.props.allCorrectAnswers}
