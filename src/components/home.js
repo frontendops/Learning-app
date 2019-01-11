@@ -6,6 +6,7 @@ class Home extends Component {
     render() {
         return (
             <div className="background-gradient">
+                <div>
                 <h1 className="logo">Quizzly</h1>
                    
                    <div className="btn-container">
@@ -13,6 +14,8 @@ class Home extends Component {
                         <button type="button" className="btn btn-primary">create quiz</button>
                     </Link>
                    </div>
+
+                </div>
                
             </div>
         )

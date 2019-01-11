@@ -9,11 +9,15 @@
 	-moz-animation: Gradient 15s ease infinite;
 	animation: Gradient 15s ease infinite;
 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
 	text-align: center;
 }
 
 .background-gradient h1 {
-	padding-top:  35%;
+	
 	font-weight: bold;
 }
 
